@@ -12,7 +12,6 @@
 
   <!-- ================= BUILD TOOLS ================= -->
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <buildtool_depend>ament_python</buildtool_depend>
 
   <!-- ================= CORE ROS 2 ================= -->
   <depend>rclpy</depend>
@@ -44,7 +43,6 @@
 
   <!-- ================= EXPORT ================= -->
   <export>
-    <!-- You are using Python nodes -->
-    <build_type>ament_python</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>

@@ -70,8 +70,8 @@ class task4A(Node):
         self.current_force_z = None
 
         self.max_tol = np.deg2rad(2)
-        self.base_kp = 0.1
-        self.base_max_speed = 0.1
+        self.base_kp = 2.0
+        self.base_max_speed = 2.5
 
         # phases config 
         
@@ -179,7 +179,7 @@ class task4A(Node):
             return True
 
         # 7. Move Robot
-        speed = max(min(self.base_kp * err, self.base_max_speed), -self.base_max_speed)
+        speed = max(min(self.base_kp * err, self.base_max_speed), -self.base_max_speed)*3
         
 
         self.get_logger().info(
@@ -216,7 +216,7 @@ class task4A(Node):
         
         # Calculate Speed
         direction = err / dist
-        max_s = 0.05 if slow else 0.1
+        max_s = 0.15 if slow else 0.4
         speed = min(dist * 2, max_s)
 
         mode = "SLOW" if slow else "FAST"
